@@ -10,8 +10,8 @@ let scrollWidth = carousel.scrollWidth - carousel.clientWidth;
 
 const showIcons = () => {
     console.log(carousel.scrollLeft);
-    arrowIcons[0].style.opacity = carousel.scrollLeft === 0 ? "0.5" : "1";
-    arrowIcons[1].style.opacity = carousel.scrollLeft === scrollWidth ? "0.5" : "1";
+    arrowIcons[0].style.opacity = carousel.scrollLeft < 5 ? "0.5" : "1";
+    arrowIcons[1].style.opacity = carousel.scrollLeft >= scrollWidth ? "0.5" : "1";
 }
 
 showIcons();
@@ -35,8 +35,8 @@ const dragging = (e) => {
     isDragging = true;
     carousel.classList.add("dragging");
     positionDiff = e.touches[0].pageX - prevPageX;
-    carousel.scrollLeft = prevScrollLeft - positionDiff;
-    showIcons();
+    carousel.scrollLeft = prevScrollLeft - positionDiff * 1.2;
+    setTimeout(() => showIcons(), 800);
 }
 
 const dragStop = () => {
