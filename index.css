@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+body {
+    font-family: 'Jost', sans-serif;
+    display: flex;
+    padding: 0 10px;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.text {
+    font-size: 1.6rem;
+}
+
+.arrows {
+    display: flex;
+    align-items: center;
+}
+
+.arrows img{
+    height: 40%;
+}
+
+.arrows img:first-child{
+    margin-right: 10px;
+}
+
+.carousel {
+    font-size: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.carousel .dragging {
+    scroll-behavior: auto;
+}
+
+.carousel .dragging img{
+    pointer-events: none;
+}
+
+.carousel img {
+    height: 380px;
+    margin-left: 20px;
+    object-fit: cover;
+    width: calc(100% / 2.3);
+    cursor: pointer;
+}
+
+.carousel img:first-child {
+    margin-left: 0;
+}
+
+@media screen and (max-width: 1200px) {
+    .carousel img {
+        width: calc(100%/1.2);
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .header {
+        justify-content: center;
+    }
+    .header .arrows {
+        display: none;
+    }
+    .carousel img {
+        width: calc(100%/1.2);
+    }
+}
