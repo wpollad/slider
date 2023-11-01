@@ -17,6 +17,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background-color: rgb(242, 241, 241);
 }
 
 .container {
@@ -85,8 +86,5 @@ body {
     }
     .header .arrows {
         display: none;
-    }
-    .carousel img {
-        width: calc(100%/1.2);
     }
 }

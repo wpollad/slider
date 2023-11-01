@@ -9,9 +9,8 @@ let imageWidth = firstImage.clientWidth + 20;
 let scrollWidth = carousel.scrollWidth - carousel.clientWidth;
 
 const showIcons = () => {
-    console.log(carousel.scrollLeft);
     arrowIcons[0].style.opacity = carousel.scrollLeft < 5 ? "0.5" : "1";
-    arrowIcons[1].style.opacity = carousel.scrollLeft >= scrollWidth ? "0.5" : "1";
+    arrowIcons[1].style.opacity = carousel.scrollLeft >= scrollWidth - 5 ? "0.5" : "1";
 }
 
 showIcons();
