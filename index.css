@@ -6,14 +6,10 @@
     box-sizing: border-box;
 }
 
-::-webkit-scrollbar {
-    width: 0;
-}
-
 body {
     font-family: 'Jost', sans-serif;
     display: flex;
-    padding: 0 10px;
+    padding-left: 10px;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -21,10 +17,11 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    margin-left: calc(100%/7);
 }
 
 .header {
+    max-width: 1200px;
     display: flex;
     justify-content: space-between;
 }
@@ -74,6 +71,9 @@ body {
 }
 
 @media screen and (max-width: 1200px) {
+    .container {
+        margin-left: 0;
+    }
     .carousel img {
         width: calc(100%/1.2);
         height: 100%;
